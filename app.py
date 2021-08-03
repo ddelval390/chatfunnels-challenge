@@ -17,7 +17,8 @@ def temperature(city):
 
 @app.route('/temperature_c/<city>')
 def temperature_celsius(city):
-    city_temp = weather.get_temperature_by_city()
+    # filled missing parameter
+    city_temp = weather.get_temperature_by_city(city)
     return f"The temperature in {city} is {city_temp} ({weather.convert_fahrenheit_to_celsius(city_temp)} Celsius)"
 
 
